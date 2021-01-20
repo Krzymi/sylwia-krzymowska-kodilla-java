@@ -37,11 +37,15 @@ public class CollectionTestSuite {
         myList.add(5);
         myList.add(7);
         myList.add(12);
+        List<Integer> espectedList = new ArrayList<>();
+        espectedList.add(4);
+        espectedList.add(12);
         //When
         List<Integer> myResult = oddNumbersExterminator.exterminate(myList);
         System.out.println("Testing a list of: " + myList + ". List after exterminate consistes of: " + myResult);
         //Then
         Assertions.assertNotEquals(myList, myResult);
+        Assertions.assertEquals(myResult, espectedList);
     }
 }
 
