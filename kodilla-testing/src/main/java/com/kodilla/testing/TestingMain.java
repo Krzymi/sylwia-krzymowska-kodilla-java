@@ -1,6 +1,6 @@
 package com.kodilla.testing;
 
-import com.kodilla.calculator.MyCalculator;
+import com.kodilla.testing.calculator.MyCalculator;
 
 public class TestingMain {
 

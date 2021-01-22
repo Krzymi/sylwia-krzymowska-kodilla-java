@@ -1,7 +1,9 @@
 package com.kodilla.testing.collection;
-import com.kodilla.testing.collection.OddNumbersExterminator;
+
 import org.junit.jupiter.api.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CollectionTestSuite {
     @BeforeEach
@@ -24,7 +26,7 @@ public class CollectionTestSuite {
         List<Integer> myResult = oddNumbersExterminator.exterminate(myEptyList);
         System.out.println("Testing an empty list: " + myResult);
         //Then
-        Assertions.assertEquals(myEptyList, myResult);
+        assertEquals(myEptyList, myResult);
     }
 
     @DisplayName("The method 'exterminate()' should extract all odd numbers from a given List")
@@ -45,7 +47,7 @@ public class CollectionTestSuite {
         System.out.println("Testing a list of: " + myList + ". List after exterminate consistes of: " + myResult);
         //Then
         Assertions.assertNotEquals(myList, myResult);
-        Assertions.assertEquals(myResult, espectedList);
+        assertEquals(myResult, espectedList);
     }
 }
 
