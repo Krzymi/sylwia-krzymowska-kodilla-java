@@ -19,11 +19,11 @@ public class ShapeCollector {
         return myList.remove(shape);
     }
 
-    public void getFigure(int n) {
-        //return myList.get(n);
+    public Shape getFigure(int n) {
+        return myList.get(n);
     }
 
-    public void ShowFigures() {
-         myList.size();
+    public static int ShowFigures() {
+         return myList.size();
     }
 }

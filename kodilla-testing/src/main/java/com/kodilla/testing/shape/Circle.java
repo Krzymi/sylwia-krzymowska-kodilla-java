@@ -1,11 +1,11 @@
 package com.kodilla.testing.shape;
 
-class Triangle implements Shape {
+class Circle implements Shape{
 
     private String name;
     private double area;
 
-    public Triangle(String name, double area) {
+    public Circle(String name, double area) {
         this.name = name;
         this.area = area;
     }
@@ -25,10 +25,10 @@ class Triangle implements Shape {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Triangle triangle = (Triangle) o;
+        Circle circle = (Circle) o;
 
-        if (Double.compare(triangle.area, area) != 0) return false;
-        return name != null ? name.equals(triangle.name) : triangle.name == null;
+        if (Double.compare(circle.area, area) != 0) return false;
+        return name != null ? name.equals(circle.name) : circle.name == null;
     }
 
     @Override
