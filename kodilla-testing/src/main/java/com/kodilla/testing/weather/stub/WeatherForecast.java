@@ -24,15 +24,14 @@ public class WeatherForecast {
     }
 
     public double averageTemperature() {
-        Map<String, Double> value = new HashMap<>();
         double sum = 0.00;
 
         for (Map.Entry<String, Double> temperature :
                 temperatures.getTemperatures().entrySet()) {
 
-            sum += value.get(temperature.getValue());
+            sum += temperature.getValue();
         }
-        double size = value.size();
+        double size = temperatures.getTemperatures().size();
         return sum/size;
     }
 }

@@ -55,7 +55,7 @@ class WeatherForecastTestSuite {
         myTemeratureAvg = weatherForecast.averageTemperature();
 
         //Then
-        Assertions.assertEquals(21.56, myTemeratureAvg);
+        Assertions.assertEquals(25.56, myTemeratureAvg);
     }
 }
 
