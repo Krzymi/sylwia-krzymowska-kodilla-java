@@ -45,13 +45,16 @@ public class LibraryUser {
 
         LibraryUser that = (LibraryUser) o;
 
-        return Objects.equals(firstname, that.firstname) &&
-                Objects.equals(lastname, that.lastname) &&
-                Objects.equals(peselId, that.peselId);
+        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
+        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
+        return peselId != null ? peselId.equals(that.peselId) : that.peselId == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstname, lastname, peselId);
+        int result = firstname != null ? firstname.hashCode() : 0;
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
+        result = 31 * result + (peselId != null ? peselId.hashCode() : 0);
+        return result;
     }
 }
