@@ -93,30 +93,24 @@ class BookDirectoryTestSuite {
     void testListBooksInHandsOfNoBooks() {
         // Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        List<Book> hastListOf0Books = new ArrayList<Book>();
+        List<Book> hasListOf0Books = generateListOfNBooks(0);
+        List<Book> hasListOf1Books = generateListOfNBooks(1);
+        List<Book> hasListOf5Books = generateListOfNBooks(5);
+
+        LibraryUser myUser = new LibraryUser("John Doe", "Zajdex", "12345678909");
+        LibraryUser myUser2 = new LibraryUser("Jack Sparrow", "Xedax", "13345678909");
+        LibraryUser myUser3 = new LibraryUser("Mickey Mouse", "Kitty", "14345678909");
+
+        when(libraryDatabaseMock.listBooksInHandsOf(myUser)).thenReturn(hasListOf0Books);
+        when(libraryDatabaseMock.listBooksInHandsOf(myUser2)).thenReturn(hasListOf1Books);
+        when(libraryDatabaseMock.listBooksInHandsOf(myUser3)).thenReturn(hasListOf5Books);
         // When
-        when(libraryDatabaseMock.listBooksInHandsOf(LibraryUser.class)).thenReturn(hastListOf0Books);
+        List<Book> theListOf0Books = bookLibrary.listBooksInHandsOf(myUser);
+        List<Book> theListOf1Books = bookLibrary.listBooksInHandsOf(myUser2);
+        List<Book> theListOf5Books = bookLibrary.listBooksInHandsOf(myUser3);
         // Then
-        assertEquals(0, hastListOf0Books.size());
-    }
-
-    @Test
-    void testListBooksInHandsOf1Book() {
-        // Given
-
-        // When
-
-        // Then
-
-    }
-
-    @Test
-    void testListBooksInHandsOf5Book() {
-        // Given
-
-        // When
-
-        // Then
-
+        assertEquals(0, hasListOf0Books.size());
+        assertEquals(1, hasListOf1Books.size());
+        assertEquals(5, hasListOf5Books.size());
     }
 }
